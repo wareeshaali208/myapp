@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Concept Mobile App</title>
+  <!-- Tailwind CSS CDN for instant app styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-slate-100 min-h-screen flex justify-center items-center font-sans antialiased">
+
+  <!-- Mobile Container Frame -->
+  <div class="w-full max-w-md h-screen sm:h-[844px] bg-white flex flex-col justify-between shadow-2xl sm:rounded-3xl overflow-hidden border border-slate-200">
+    
+    <!-- Top Bar / App Header -->
+    <header class="bg-indigo-600 text-white p-5 shadow-md flex justify-between items-center">
+      <div>
+        <h1 class="text-xl font-bold tracking-wide">TaskMaster</h1>
+        <p class="text-xs text-indigo-200">Interactive Class Demo</p>
+      </div>
+      <span class="bg-indigo-500 text-xs px-2.5 py-1 rounded-full text-indigo-100 font-medium">v1.0</span>
+    </header>
+
+    <!-- Main Content Area (Scrollable) -->
+    <main class="flex-1 p-5 overflow-y-auto space-y-4">
+      <!-- Input Section -->
+      <form id="appForm" class="flex gap-2">
+        <input 
+          type="text" 
+          id="itemInput" 
+          placeholder="Add a new task..." 
+          class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+          required
+        />
+        <button 
+          type="submit" 
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-3 rounded-xl text-sm transition-all active:scale-95">
+          Add
+        </button>
+      </form>
+
+      <!-- Dynamic Item List -->
+      <div id="itemList" class="space-y-3">
+        <!-- Default Demo Item -->
+        <div class="flex items-center justify-between p-3.5 bg-slate-50 border border-slate-200 rounded-xl shadow-sm">
+          <span class="text-sm font-medium text-slate-700">Present app demo to class</span>
+          <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-red-500 text-xs font-semibold">Delete</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-slate-200 flex justify-around py-3 px-2 text-xs text-slate-500">
+      <button class="flex flex-col items-center text-indigo-600 font-bold">
+        <span>🏠</span>
+        <span class="mt-1">Home</span>
+      </button>
+      <button class="flex flex-col items-center hover:text-indigo-600">
+        <span>📊</span>
+        <span class="mt-1">Stats</span>
+      </button>
+      <button class="flex flex-col items-center hover:text-indigo-600">
+        <span>⚙️</span>
+        <span class="mt-1">Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
